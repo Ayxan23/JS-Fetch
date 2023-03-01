@@ -1,5 +1,5 @@
 let table = document.querySelector(".table");
-let chechk = false;
+let check = false;
 let i = 0;
 
 fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
@@ -14,15 +14,14 @@ fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
       <td class = "td${i}">${obj.thumbnailUrl}</td>
       </tr>`;
 
-      let clsNm = ".td" + i;
-      String(clsNm);
+      let tdArr = document.querySelectorAll(`.td${i}`);
       i++;
-      let tdArr = document.querySelectorAll(clsNm);
+
       tdArr.forEach((td) => {
-        chechk
+        check
           ? (td.style.backgroundColor = "#ececec")
           : (td.style.backgroundColor = "#fff");
       });
-      chechk ? (chechk = false) : (chechk = true);
+      check ? (check = false) : (check = true);
     })
   );
